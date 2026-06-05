@@ -19,9 +19,9 @@ public class ChallengeOrchestrator {
         Solver solver = solverFor(day, part);
         String input = loader.load(day);
         long startNanos = System.nanoTime();
-        int result = solver.solve(input);
+        long result = solver.solve(input);
         long elapsedMs = (System.nanoTime() - startNanos) / 1_000_000;
-        System.out.printf("Día %02d, parte %c: %d  (%d ms)%n", day, part, result, elapsedMs);
+        System.out.printf("Dia %02d, parte %c: %d  (%d ms)%n", day, part, result, elapsedMs);
     }
 
     private Solver solverFor(int day, char part) {
