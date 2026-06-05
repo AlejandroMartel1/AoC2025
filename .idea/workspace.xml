@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/Solver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/Dial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/Rotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/io/InputLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day03.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day04.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day05.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day06.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day07.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day08.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day09.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputs/day12.txt" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Test Day1 implemented">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/Dial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day01/Dial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +39,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.DialTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -102,11 +80,55 @@
       <updated>1780649233699</updated>
       <workItem from="1780649234684" duration="3300000" />
       <workItem from="1780657135689" duration="4499000" />
-      <workItem from="1780664498014" duration="3929000" />
+      <workItem from="1780664498014" duration="4735000" />
+      <workItem from="1780684901649" duration="669000" />
     </task>
+    <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
+      <option name="closed" value="true" />
+      <created>1780673999303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780673999303</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Test implement">
+      <option name="closed" value="true" />
+      <created>1780685462740</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780685462740</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a38f2d27-6328-4c4a-9e62-987f8d1a2e8e" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="a38f2d27-6328-4c4a-9e62-987f8d1a2e8e">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Application, IO, Input-resources and Day1 challenge implemented" />
+    <MESSAGE value="Test implement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test implement" />
   </component>
 </project>

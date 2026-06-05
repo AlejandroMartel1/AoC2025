@@ -24,6 +24,10 @@ public final class Dial {
         );
     }
 
+    public Dial follow(String... instructions) {
+        return follow(String.join("\n", instructions));
+    }
+
     public int countTimesEndingAtZero() {
         int zeros = 0;
         int position = START;
