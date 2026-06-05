@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DialTest {
 
-    private static final String PUZZLE_EXAMPLE = """
+    private static final String AdventExample = """
             L68
             L30
             R48
@@ -44,7 +44,7 @@ class DialTest {
 
     @Test
     void thePuzzleExampleProducesExpectedCounts() {
-        Dial dial = Dial.empty().follow(PUZZLE_EXAMPLE);
+        Dial dial = Dial.empty().follow(AdventExample);
         assertEquals(3, dial.countTimesEndingAtZero());
         assertEquals(6, dial.countTimesPassingZero());
     }
