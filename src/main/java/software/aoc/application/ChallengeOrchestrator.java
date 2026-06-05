@@ -1,6 +1,4 @@
 package software.aoc.application;
-import software.aoc.challenges.day01.PartA;
-import software.aoc.challenges.day01.PartB;
 import software.aoc.io.InputLoader;
 import software.aoc.challenges.Solver;
 import java.util.Map;
@@ -11,8 +9,10 @@ public class ChallengeOrchestrator {
     private final InputLoader loader = new InputLoader();
 
     private static final Map<SolverKey, Supplier<Solver>> SOLVERS = Map.of(
-            new SolverKey(1, 'a'), PartA::new,
-            new SolverKey(1, 'b'), PartB::new
+            new SolverKey(1, 'a'), software.aoc.challenges.day01.PartA::new,
+            new SolverKey(1, 'b'), software.aoc.challenges.day01.PartB::new,
+            new SolverKey(2, 'a'), software.aoc.challenges.day02.PartA::new,
+            new SolverKey(2, 'b'), software.aoc.challenges.day02.PartB::new
     );
 
     public void run(int day, char part) {
