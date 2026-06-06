@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 2 Tests Implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/BatteryBank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PowerSupply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day03/PowerSupplyTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 3 Challenge and Tests Implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
@@ -31,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -47,6 +49,7 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DialTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.GiftShopCatalogTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaperGridTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PowerSupplyTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -91,7 +94,8 @@
       <workItem from="1780664498014" duration="4735000" />
       <workItem from="1780684901649" duration="970000" />
       <workItem from="1780686123252" duration="7644000" />
-      <workItem from="1780732034114" duration="999000" />
+      <workItem from="1780732034114" duration="3902000" />
+      <workItem from="1780750313911" duration="190000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -141,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780696835730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Day 3 Challenge and Tests Implemented">
+      <option name="closed" value="true" />
+      <created>1780733233950</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780733233950</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +187,7 @@
     <MESSAGE value="Modified interface value type int -&gt; long to satisfy number size in Day2 Challenge" />
     <MESSAGE value="Day 2 challenge implemented" />
     <MESSAGE value="Day 2 Tests Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2 Tests Implemented" />
+    <MESSAGE value="Day 3 Challenge and Tests Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 3 Challenge and Tests Implemented" />
   </component>
 </project>

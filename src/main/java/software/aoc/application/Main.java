@@ -2,8 +2,8 @@ package software.aoc.application;
 
 public final class Main {
 
-    private static final int Day = 3;
-    private static final char Part = 'b';
+    private static final int Day = 4;
+    private static final char Part = 'a';
 
     public static void main(String[] args) {
         try {
