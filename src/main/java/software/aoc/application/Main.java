@@ -2,8 +2,8 @@ package software.aoc.application;
 
 public final class Main {
 
-    private static final int Day = 4;
-    private static final char Part = 'a';
+    private static final int Day = 5;
+    private static final char Part = 'b';
 
     public static void main(String[] args) {
         try {
@@ -32,13 +32,13 @@ public final class Main {
                 }
                 return day;
             } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("Introduzca un valor numérico: " + value);
+                throw new IllegalArgumentException("El valor introducido tiene que ser numérico: " + value);
             }
         }
 
         private static char parsePart(String value) {
             if (value.length() != 1 || (value.charAt(0) != 'a' && value.charAt(0) != 'b')) {
-                throw new IllegalArgumentException("Parte debe ser 'a' o 'b': " + value);
+                throw new IllegalArgumentException("El argumento tiene que ser 'a' o 'b': " + value);
             }
             return value.charAt(0);
         }

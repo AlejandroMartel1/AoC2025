@@ -8,7 +8,7 @@ public class ChallengeOrchestrator {
 
     private final InputLoader loader = new InputLoader();
 
-    private static final Map<SolverKey, Supplier<Solver>> SOLVERS = Map.of(
+    private static final Map<SolverKey, Supplier<Solver>> solvers = Map.of(
             new SolverKey(1, 'a'), software.aoc.challenges.day01.PartA::new,
             new SolverKey(1, 'b'), software.aoc.challenges.day01.PartB::new,
             new SolverKey(2, 'a'), software.aoc.challenges.day02.PartA::new,
@@ -16,7 +16,9 @@ public class ChallengeOrchestrator {
             new SolverKey(3, 'a'), software.aoc.challenges.day03.PartA::new,
             new SolverKey(3, 'b'), software.aoc.challenges.day03.PartB::new,
             new SolverKey(4, 'a'), software.aoc.challenges.day04.PartA::new,
-            new SolverKey(4, 'b'), software.aoc.challenges.day04.PartB::new
+            new SolverKey(4, 'b'), software.aoc.challenges.day04.PartB::new,
+            new SolverKey(5, 'a'), software.aoc.challenges.day05.PartA::new,
+            new SolverKey(5, 'b'), software.aoc.challenges.day05.PartB::new
     );
 
     public void run(int day, char part) {
@@ -29,9 +31,9 @@ public class ChallengeOrchestrator {
     }
 
     private Solver solverFor(int day, char part) {
-        Supplier<Solver> factory = SOLVERS.get(new SolverKey(day, part));
+        Supplier<Solver> factory = solvers.get(new SolverKey(day, part));
         if (factory == null) {
-            throw new IllegalArgumentException("Solver no encontrado: día " + day + " parte " + part);
+            throw new IllegalArgumentException("Solver no  ha encontrado el día " + day + " parte " + part);
         }
         return factory.get();
     }

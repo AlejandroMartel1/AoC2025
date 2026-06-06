@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 3 Challenge and Tests Implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 4 Challenge and Tests Implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/IngredientDataBaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
@@ -31,7 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -44,30 +45,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DialTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GiftShopCatalogTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaperGridTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PowerSupplyTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleja/Desktop/AoC/Código/AdventOfCode/src/main/resources/inputs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.DialTest.executor": "Run",
+    "JUnit.GiftShopCatalogTest.executor": "Run",
+    "JUnit.IngredientDataBaseTest.executor": "Run",
+    "JUnit.PaperGridTest.executor": "Run",
+    "JUnit.PowerSupplyTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/aleja/Desktop/AoC/Código/AdventOfCode/src/main/resources/inputs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aleja\Desktop\AoC\Código\AdventOfCode\src\main\resources\inputs" />
@@ -95,7 +97,9 @@
       <workItem from="1780684901649" duration="970000" />
       <workItem from="1780686123252" duration="7644000" />
       <workItem from="1780732034114" duration="3902000" />
-      <workItem from="1780750313911" duration="190000" />
+      <workItem from="1780750313911" duration="218000" />
+      <workItem from="1780759383526" duration="643000" />
+      <workItem from="1780767172542" duration="1486000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -153,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780733233950</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Day 4 Challenge and Tests Implemented">
+      <option name="closed" value="true" />
+      <created>1780759339525</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780759339525</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +200,7 @@
     <MESSAGE value="Day 2 challenge implemented" />
     <MESSAGE value="Day 2 Tests Implemented" />
     <MESSAGE value="Day 3 Challenge and Tests Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 3 Challenge and Tests Implemented" />
+    <MESSAGE value="Day 4 Challenge and Tests Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 4 Challenge and Tests Implemented" />
   </component>
 </project>
