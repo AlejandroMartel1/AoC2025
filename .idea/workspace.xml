@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 4 Challenge and Tests Implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/IngredientDataBaseTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Map.of limitation solved with Map.ofEntries, Day 6 Challenge and Tests implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathProblem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathWorksheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/Operation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day06/MathWorksheetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/IngredientDataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/IngredientDataBaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,7 @@
     "JUnit.DialTest.executor": "Run",
     "JUnit.GiftShopCatalogTest.executor": "Run",
     "JUnit.IngredientDataBaseTest.executor": "Run",
+    "JUnit.MathWorksheetTest.executor": "Run",
     "JUnit.PaperGridTest.executor": "Run",
     "JUnit.PowerSupplyTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -100,6 +103,8 @@
       <workItem from="1780750313911" duration="218000" />
       <workItem from="1780759383526" duration="643000" />
       <workItem from="1780767172542" duration="1486000" />
+      <workItem from="1780779562188" duration="3190000" />
+      <workItem from="1780821301148" duration="1567000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -165,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780759339525</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Day 5 Challenge and Tests Implemented">
+      <option name="closed" value="true" />
+      <created>1780779800403</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780779800403</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +214,7 @@
     <MESSAGE value="Day 2 Tests Implemented" />
     <MESSAGE value="Day 3 Challenge and Tests Implemented" />
     <MESSAGE value="Day 4 Challenge and Tests Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 4 Challenge and Tests Implemented" />
+    <MESSAGE value="Day 5 Challenge and Tests Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 5 Challenge and Tests Implemented" />
   </component>
 </project>

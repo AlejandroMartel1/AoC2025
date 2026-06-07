@@ -53,7 +53,7 @@ public final class IngredientDataBase {
         sorted.sort(Comparator.comparingLong(FreshRange::first));
 
         List<FreshRange> merged = new ArrayList<>();
-        FreshRange current = sorted.get(0);
+        FreshRange current = sorted.getFirst();
         for (int i = 1; i < sorted.size(); i++) {
             FreshRange next = sorted.get(i);
             if (next.first() <= current.last() + 1) {
