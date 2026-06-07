@@ -2,7 +2,7 @@ package software.aoc.application;
 
 public final class Main {
 
-    private static final int Day = 5;
+    private static final int Day = 7;
     private static final char Part = 'b';
 
     public static void main(String[] args) {

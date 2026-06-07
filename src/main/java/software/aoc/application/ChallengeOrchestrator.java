@@ -21,7 +21,9 @@ public class ChallengeOrchestrator {
             entry(new SolverKey(5, 'a'), software.aoc.challenges.day05.PartA::new),
             entry(new SolverKey(5, 'b'), software.aoc.challenges.day05.PartB::new),
             entry(new SolverKey(6, 'a'), software.aoc.challenges.day06.PartA::new),
-            entry(new SolverKey(6, 'b'), software.aoc.challenges.day06.PartB::new)
+            entry(new SolverKey(6, 'b'), software.aoc.challenges.day06.PartB::new),
+            entry(new SolverKey(7, 'a'), software.aoc.challenges.day07.PartA::new),
+            entry(new SolverKey(7, 'b'), software.aoc.challenges.day07.PartB::new)
     );
 
     public void run(int day, char part) {
