@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Map.of limitation solved with Map.ofEntries, Day 6 Challenge and Tests implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/TachyonManifold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day07/TachyonManifoldTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 7 Challenge and Tests implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/CircuitNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Playground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/UnionFind.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day07/TachyonManifoldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day07/TachyonManifoldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +108,8 @@
       <workItem from="1780847955668" duration="1707000" />
       <workItem from="1780858470924" duration="211000" />
       <workItem from="1780866930775" duration="68000" />
-      <workItem from="1780870620540" duration="581000" />
+      <workItem from="1780870620540" duration="1470000" />
+      <workItem from="1780911376591" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -188,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780848030690</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Day 7 Challenge and Tests implemented">
+      <option name="closed" value="true" />
+      <created>1780871242093</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780871242093</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +237,7 @@
     <MESSAGE value="Day 4 Challenge and Tests Implemented" />
     <MESSAGE value="Day 5 Challenge and Tests Implemented" />
     <MESSAGE value="Map.of limitation solved with Map.ofEntries, Day 6 Challenge and Tests implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map.of limitation solved with Map.ofEntries, Day 6 Challenge and Tests implemented" />
+    <MESSAGE value="Day 7 Challenge and Tests implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 7 Challenge and Tests implemented" />
   </component>
 </project>
