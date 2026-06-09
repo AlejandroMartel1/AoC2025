@@ -25,7 +25,9 @@ public class ChallengeOrchestrator {
             entry(new SolverKey(7, 'a'), software.aoc.challenges.day07.PartA::new),
             entry(new SolverKey(7, 'b'), software.aoc.challenges.day07.PartB::new),
             entry(new SolverKey(8, 'a'), software.aoc.challenges.day08.PartA::new),
-            entry(new SolverKey(8, 'b'), software.aoc.challenges.day08.PartB::new)
+            entry(new SolverKey(8, 'b'), software.aoc.challenges.day08.PartB::new),
+            entry(new SolverKey(9, 'a'), software.aoc.challenges.day09.PartA::new),
+            entry(new SolverKey(9, 'b'), software.aoc.challenges.day09.PartB::new)
 
     );
 
