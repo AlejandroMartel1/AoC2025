@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 8 Challenge and Tests implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/MovieTheater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PolygonGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/RedTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day09/MovieTheaterTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 10 Challenge and Tests implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
@@ -50,6 +50,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.DialTest.executor": "Run",
+    "JUnit.FactoryTest.executor": "Run",
     "JUnit.GiftShopCatalogTest.executor": "Run",
     "JUnit.IngredientDataBaseTest.executor": "Run",
     "JUnit.MathWorksheetTest.executor": "Run",
@@ -84,7 +85,7 @@
       <recent name="software.aoc.challenges.day09" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieTheaterTest">
+  <component name="RunManager">
     <configuration name="MovieTheaterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AdventOfCode" />
       <extension name="coverage">
@@ -158,7 +159,9 @@
       <workItem from="1780937967611" duration="17000" />
       <workItem from="1780938461548" duration="158000" />
       <workItem from="1780938667785" duration="4000" />
-      <workItem from="1781017093255" duration="1992000" />
+      <workItem from="1781017093255" duration="2089000" />
+      <workItem from="1781030154534" duration="3000" />
+      <workItem from="1781634853506" duration="1687000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -256,7 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780912443866</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Day 9 Challenge and Tests implemented">
+      <option name="closed" value="true" />
+      <created>1781019169885</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781019169885</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Day 10 Challenge and Tests implemented">
+      <option name="closed" value="true" />
+      <created>1781636041364</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1781636041364</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +315,8 @@
     <MESSAGE value="Map.of limitation solved with Map.ofEntries, Day 6 Challenge and Tests implemented" />
     <MESSAGE value="Day 7 Challenge and Tests implemented" />
     <MESSAGE value="Day 8 Challenge and Tests implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 8 Challenge and Tests implemented" />
+    <MESSAGE value="Day 9 Challenge and Tests implemented" />
+    <MESSAGE value="Day 10 Challenge and Tests implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 10 Challenge and Tests implemented" />
   </component>
 </project>
