@@ -16,16 +16,11 @@ public final class PowerSupply {
 
     public PowerSupply withBanksFrom(String input) {
         return new PowerSupply(
-                input.lines()
-                        .filter(line -> !line.isBlank())
-                        .map(BatteryBank::parse)
-                        .toList()
+                input.lines().filter(line -> !line.isBlank()).map(BatteryBank::parse).toList()
         );
     }
 
     public long totalJoltageWith(int batteriesOn) {
-        return banks.stream()
-                .mapToLong(bank -> bank.maxJoltageWith(batteriesOn))
-                .sum();
+        return banks.stream().mapToLong(bank -> bank.maxJoltageWith(batteriesOn)).sum();
     }
 }

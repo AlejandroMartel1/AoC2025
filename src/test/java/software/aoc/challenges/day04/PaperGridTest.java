@@ -22,13 +22,13 @@ class PaperGridTest {
 
     @Test
     void anEmptyGridHasNoAccessibleOrRemovableRolls() {
-        assertEquals(0, PaperGrid.empty().countAccessibleRolls());
-        assertEquals(0, PaperGrid.empty().countTotalRemovableRolls());
+        assertEquals(0, TrashCompactor.empty().countAccessibleRolls());
+        assertEquals(0, TrashCompactor.empty().countTotalRemovableRolls());
     }
 
     @Test
     void aGridWithoutRollsHasNoAccessibleRolls() {
-        long accessible = PaperGrid.empty()
+        long accessible = TrashCompactor.empty()
                 .withLayoutFrom("....\n....\n....")
                 .countAccessibleRolls();
         assertEquals(0, accessible);
@@ -36,7 +36,7 @@ class PaperGridTest {
 
     @Test
     void aSingleIsolatedRollIsAccessible() {
-        long accessible = PaperGrid.empty()
+        long accessible = TrashCompactor.empty()
                 .withLayoutFrom(".....\n..@..\n.....")
                 .countAccessibleRolls();
         assertEquals(1, accessible);
@@ -44,7 +44,7 @@ class PaperGridTest {
 
     @Test
     void aRollSurroundedByEightRollsIsNotAccessible() {
-        long accessible = PaperGrid.empty()
+        long accessible = TrashCompactor.empty()
                 .withLayoutFrom("@@@\n@@@\n@@@")
                 .countAccessibleRolls();
         assertEquals(4, accessible);
@@ -52,7 +52,7 @@ class PaperGridTest {
 
     @Test
     void aRollAtTheGridBorderCountsFewerNeighbors() {
-        long accessible = PaperGrid.empty()
+        long accessible = TrashCompactor.empty()
                 .withLayoutFrom("""
                                            @...
                                            ....
@@ -64,7 +64,7 @@ class PaperGridTest {
 
     @Test
     void allRollsBecomeRemovableWhenIsolated() {
-        long removable = PaperGrid.empty()
+        long removable = TrashCompactor.empty()
                 .withLayoutFrom("@.@.@")
                 .countTotalRemovableRolls();
         assertEquals(3, removable);
@@ -72,7 +72,7 @@ class PaperGridTest {
 
     @Test
     void theIterativeRemovalEventuallyClearsAccessibleClusters() {
-        long removable = PaperGrid.empty()
+        long removable = TrashCompactor.empty()
                 .withLayoutFrom("@@@\n@@@\n@@@")
                 .countTotalRemovableRolls();
         assertEquals(9, removable);
@@ -80,15 +80,15 @@ class PaperGridTest {
 
     @Test
     void thePuzzleExampleProducesExpectedCounts() {
-        PaperGrid grid = PaperGrid.empty().withLayoutFrom(AdventExample);
-        assertEquals(13, grid.countAccessibleRolls());
-        assertEquals(43, grid.countTotalRemovableRolls());
+        TrashCompactor compactor = TrashCompactor.empty().withLayoutFrom(AdventExample);
+        assertEquals(13, compactor.countAccessibleRolls());
+        assertEquals(43, compactor.countTotalRemovableRolls());
     }
 
     @Test
     void thePaperGridIsImmutable() {
-        PaperGrid original = PaperGrid.empty();
-        PaperGrid loaded = original.withLayoutFrom("..@..\n.....\n..@..");
+        TrashCompactor original = TrashCompactor.empty();
+        TrashCompactor loaded = original.withLayoutFrom("..@..\n.....\n..@..");
 
         assertEquals(0, original.countAccessibleRolls());
         assertEquals(2, loaded.countAccessibleRolls());
@@ -97,9 +97,9 @@ class PaperGridTest {
     @Test
     void realPuzzleInputProducesExpectedAnswers() throws IOException {
         String input = Files.readString(Path.of("src/main/resources/inputs/day04.txt"));
-        PaperGrid grid = PaperGrid.empty().withLayoutFrom(input);
+        TrashCompactor compactor = TrashCompactor.empty().withLayoutFrom(input);
 
-        assertEquals(1349L, grid.countAccessibleRolls());
-        assertEquals(8277L, grid.countTotalRemovableRolls());
+        assertEquals(1349L, compactor.countAccessibleRolls());
+        assertEquals(8277L, compactor.countTotalRemovableRolls());
     }
 }

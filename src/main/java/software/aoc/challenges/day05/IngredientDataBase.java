@@ -1,8 +1,5 @@
 package software.aoc.challenges.day05;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public final class IngredientDataBase {
@@ -21,53 +18,30 @@ public final class IngredientDataBase {
 
     public IngredientDataBase loadedFrom(String input) {
         String[] sections = input.trim().split("\\R\\R");
-        List<FreshRange> ranges = sections[0].lines()
-                .filter(line -> !line.isBlank())
-                .map(FreshRange::parse)
-                .toList();
-        long[] ids = sections.length > 1
-                ? sections[1].lines()
-                .filter(line -> !line.isBlank())
-                .mapToLong(Long::parseLong)
-                .toArray()
-                : new long[0];
-        return new IngredientDataBase(ranges, ids);
+        return new IngredientDataBase(parseRanges(sections[0]), parseIds(idsSectionIn(sections)));
     }
 
     public long countFreshIngredients() {
-        return Arrays.stream(availableIds)
-                .filter(this::isFresh)
-                .count();
+        return Arrays.stream(availableIds).filter(this::isFresh).count();
     }
 
     public long countAllFreshIds() {
-        return mergedRanges().stream()
-                .mapToLong(range -> range.last() - range.first() + 1)
-                .sum();
-    }
-
-    private List<FreshRange> mergedRanges() {
-        if (freshRanges.isEmpty()) return List.of();
-
-        List<FreshRange> sorted = new ArrayList<>(freshRanges);
-        sorted.sort(Comparator.comparingLong(FreshRange::first));
-
-        List<FreshRange> merged = new ArrayList<>();
-        FreshRange current = sorted.getFirst();
-        for (int i = 1; i < sorted.size(); i++) {
-            FreshRange next = sorted.get(i);
-            if (next.first() <= current.last() + 1) {
-                current = new FreshRange(current.first(), Math.max(current.last(), next.last()));
-            } else {
-                merged.add(current);
-                current = next;
-            }
-        }
-        merged.add(current);
-        return merged;
+        return MergedRanges.from(freshRanges).totalSize();
     }
 
     private boolean isFresh(long id) {
         return freshRanges.stream().anyMatch(range -> range.contains(id));
+    }
+
+    private static List<FreshRange> parseRanges(String section) {
+        return section.lines().filter(line -> !line.isBlank()).map(FreshRange::parse).toList();
+    }
+
+    private static long[] parseIds(String section) {
+        return section.lines().filter(line -> !line.isBlank()).mapToLong(Long::parseLong).toArray();
+    }
+
+    private static String idsSectionIn(String[] sections) {
+        return sections.length > 1 ? sections[1] : "";
     }
 }

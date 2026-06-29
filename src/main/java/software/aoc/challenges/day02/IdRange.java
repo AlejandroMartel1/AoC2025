@@ -1,5 +1,4 @@
 package software.aoc.challenges.day02;
-
 import java.util.stream.LongStream;
 
 public record IdRange(long first, long last) {

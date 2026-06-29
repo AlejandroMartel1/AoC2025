@@ -4,16 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 10 Challenge and Tests implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 11 Challenge and Tests implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/Selection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/TrashCompactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/MergedRanges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/ProblemSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/BeamState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/DiagramRow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/Timelines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/VerticalSegment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/IndicatorLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/PartB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/Reactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/ChristmasTreeFarm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Packer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/PartA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Region.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day11/ReactorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day12/ChristmasTreeFarmTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day02/IdRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day02/IdRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/BatteryBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/BatteryBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PowerSupply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PowerSupply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathWorksheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathWorksheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/TachyonManifold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/TachyonManifold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/CircuitNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/CircuitNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Playground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Playground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/MovieTheater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/MovieTheater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PolygonGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PolygonGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,37 +85,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.DialTest.executor": "Run",
-    "JUnit.FactoryTest.executor": "Run",
-    "JUnit.GiftShopCatalogTest.executor": "Run",
-    "JUnit.IngredientDataBaseTest.executor": "Run",
-    "JUnit.MathWorksheetTest.executor": "Run",
-    "JUnit.MovieTheaterTest.executor": "Run",
-    "JUnit.MovieTheaterTest.theMovieTheaterIsImmutable.executor": "Run",
-    "JUnit.PaperGridTest.executor": "Run",
-    "JUnit.PlaygroundTest.executor": "Run",
-    "JUnit.PowerSupplyTest.executor": "Run",
-    "JUnit.TachyonManifoldTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aleja/Desktop/AoC/Código/AdventOfCode/src/main/resources/inputs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.InspectDay10.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChristmasTreeFarmTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DialTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FactoryTest.inspectMachineDimensions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GiftShopCatalogTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IngredientDataBaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MathWorksheetTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MovieTheaterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MovieTheaterTest.theMovieTheaterIsImmutable.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaperGridTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PlaygroundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PowerSupplyTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReactorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TachyonManifoldTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/aleja/Desktop/AoC/Código/AdventOfCode/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleja/Desktop/AoC/Código/AdventOfCode/src/main/resources/inputs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aleja\Desktop\AoC\Código\AdventOfCode\src\main\resources\inputs" />
@@ -85,7 +129,23 @@
       <recent name="software.aoc.challenges.day09" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FactoryTest.inspectMachineDimensions">
+    <configuration name="FactoryTest.inspectMachineDimensions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="software.aoc.challenges.day10.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="software.aoc.challenges.day10" />
+      <option name="MAIN_CLASS_NAME" value="software.aoc.challenges.day10.FactoryTest" />
+      <option name="METHOD_NAME" value="inspectMachineDimensions" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MovieTheaterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AdventOfCode" />
       <extension name="coverage">
@@ -119,6 +179,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FactoryTest.inspectMachineDimensions" />
         <item itemvalue="JUnit.MovieTheaterTest" />
         <item itemvalue="JUnit.MovieTheaterTest.theMovieTheaterIsImmutable" />
       </list>
@@ -161,7 +222,17 @@
       <workItem from="1780938667785" duration="4000" />
       <workItem from="1781017093255" duration="2089000" />
       <workItem from="1781030154534" duration="3000" />
-      <workItem from="1781634853506" duration="1687000" />
+      <workItem from="1781634853506" duration="2416000" />
+      <workItem from="1781692771410" duration="275000" />
+      <workItem from="1781735317974" duration="38000" />
+      <workItem from="1781806995304" duration="5074000" />
+      <workItem from="1781892114197" duration="1834000" />
+      <workItem from="1782068326497" duration="712000" />
+      <workItem from="1782121128046" duration="12065000" />
+      <workItem from="1782205512857" duration="6253000" />
+      <workItem from="1782229481148" duration="1517000" />
+      <workItem from="1782250577765" duration="1615000" />
+      <workItem from="1782290944632" duration="1925000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -275,7 +346,23 @@
       <option name="project" value="LOCAL" />
       <updated>1781636041364</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Day 10 Challenge and Tests implemented">
+      <option name="closed" value="true" />
+      <created>1781636621533</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1781636621533</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Day 11 Challenge and Tests implemented">
+      <option name="closed" value="true" />
+      <created>1781692920381</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1781692920381</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +404,7 @@
     <MESSAGE value="Day 8 Challenge and Tests implemented" />
     <MESSAGE value="Day 9 Challenge and Tests implemented" />
     <MESSAGE value="Day 10 Challenge and Tests implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 10 Challenge and Tests implemented" />
+    <MESSAGE value="Day 11 Challenge and Tests implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 11 Challenge and Tests implemented" />
   </component>
 </project>

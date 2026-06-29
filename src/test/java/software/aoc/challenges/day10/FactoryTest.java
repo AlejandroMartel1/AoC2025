@@ -1,10 +1,9 @@
 package software.aoc.challenges.day10;
-
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,33 +23,26 @@ class FactoryTest {
 
     @Test
     void aMachineParsesTheLightsDiagramAsABitmask() {
-        // [.##.] -> luz 0 off, luz 1 on, luz 2 on, luz 3 off -> 0b0110 = 6
         Machine machine = Machine.parse("[.##.] (3) (1,3) {1,2,3,4}");
-        assertEquals(0b0110, machine.targetMask());
+        assertEquals(0b0110, machine.light().value());
     }
 
     @Test
     void aMachineParsesEachButtonAsABitmaskOfAffectedIndices() {
-        // (1,3) afecta luces 1 y 3 -> 0b1010 = 10
         Machine machine = Machine.parse("[....] (1,3) (0,2) {0,0,0,0}");
-        assertEquals(0b1010, (int) machine.buttonMasks().get(0));
-        assertEquals(0b0101, (int) machine.buttonMasks().get(1));
+        assertEquals(0b1010, machine.buttons().get(0).wiring());
+        assertEquals(0b0101, machine.buttons().get(1).wiring());
     }
 
     @Test
     void aMachineParsesTheJoltageRequirementsAsCounterTargets() {
         Machine machine = Machine.parse("[.##.] (3) (1,3) {3,5,4,7}");
-        assertEquals(4, machine.targetCounters().length);
-        assertEquals(3, machine.targetCounters()[0]);
-        assertEquals(5, machine.targetCounters()[1]);
-        assertEquals(4, machine.targetCounters()[2]);
-        assertEquals(7, machine.targetCounters()[3]);
+        assertEquals(List.of(3, 5, 4, 7), machine.joltage());
     }
 
     @Test
     void theFirstExampleMachineNeedsTwoPressesForTheLights() {
         Machine machine = Machine.parse("[.##.] (3) (1,3) (2) (2,3) (0,2) (0,1) {3,5,4,7}");
-        // (0,2) XOR (0,1) = 0b0101 XOR 0b0011 = 0b0110 = target
         assertEquals(2, machine.fewestButtonPresses());
     }
 
@@ -105,7 +97,6 @@ class FactoryTest {
         Machine machine = Machine.parse("[...] (0) (1) (2) {5,3,7}");
         assertEquals(15L, machine.fewestPressesForJoltage());
     }
-
 
     @Test
     void theFactoryIsImmutable() {

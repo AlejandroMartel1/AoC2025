@@ -1,175 +1,77 @@
 package software.aoc.challenges.day10;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.OptionalLong;
+import java.util.stream.IntStream;
 
 public final class JoltageSystem {
 
-    private final List<Integer> buttonMasks;
-    private final int[] targetCounters;
+    private final List<Integer> wirings;
+    private final List<Integer> joltage;
+    private final Map<List<Integer>, OptionalLong> memo = new HashMap<>();
 
-    public JoltageSystem(List<Integer> buttonMasks, int[] targetCounters) {
-        this.buttonMasks = buttonMasks;
-        this.targetCounters = targetCounters;
+    public JoltageSystem(List<Integer> wirings, List<Integer> joltage) {
+        this.wirings = wirings;
+        this.joltage = joltage;
     }
 
     public long minimumPresses() {
-        int n = buttonMasks.size();
-        int m = targetCounters.length;
-
-        Fraction[][] augmented = buildAugmentedMatrix(n, m);
-        int[] pivotColumnOfRow = new int[m];
-        int rank = reduceToRowEchelonForm(augmented, n, m, pivotColumnOfRow);
-        List<Integer> freeVariables = freeVariables(n, rank, pivotColumnOfRow);
-        int[] freeVariableCaps = freeVariableCaps(freeVariables);
-        long[] best = { Long.MAX_VALUE };
-        enumerateFreeVariables(0, new long[freeVariables.size()], freeVariables,
-                freeVariableCaps, augmented, rank, best);
-
-        return best[0];
+        return solve(joltage).orElse(0L);
     }
 
-    private Fraction[][] buildAugmentedMatrix(int n, int m) {
-        Fraction[][] augmented = new Fraction[m][n + 1];
-        for (int counter = 0; counter < m; counter++) {
-            for (int button = 0; button < n; button++) {
-                boolean affects = ((buttonMasks.get(button) >> counter) & 1) != 0;
-                augmented[counter][button] = Fraction.of(affects ? 1 : 0);
-            }
-            augmented[counter][n] = Fraction.of(targetCounters[counter]);
-        }
-        return augmented;
+    private OptionalLong solve(List<Integer> remaining) {
+        if (allZero(remaining)) return OptionalLong.of(0L);
+        if (memo.containsKey(remaining)) return memo.get(remaining);
+        OptionalLong best = bestOverAllMasks(remaining);
+        memo.put(remaining, best);
+        return best;
     }
 
-    private int reduceToRowEchelonForm(Fraction[][] aug, int n, int m, int[] pivotColumnOfRow) {
-        Arrays.fill(pivotColumnOfRow, -1);
-        int row = 0;
-        for (int col = 0; col < n && row < m; col++) {
-            int pivot = -1;
-            for (int r = row; r < m; r++) {
-                if (aug[r][col].isNonZero()) { pivot = r; break; }
-            }
-            if (pivot == -1) continue;
-
-            Fraction[] tmp = aug[pivot]; aug[pivot] = aug[row]; aug[row] = tmp;
-
-            Fraction pivotValue = aug[row][col];
-            for (int c = 0; c <= n; c++) {
-                aug[row][c] = aug[row][c].dividedBy(pivotValue);
-            }
-            for (int r = 0; r < m; r++) {
-                if (r != row && aug[r][col].isNonZero()) {
-                    Fraction factor = aug[r][col];
-                    for (int c = 0; c <= n; c++) {
-                        aug[r][c] = aug[r][c].minus(factor.times(aug[row][c]));
-                    }
-                }
-            }
-            pivotColumnOfRow[row] = col;
-            row++;
-        }
-        return row;
+    private OptionalLong bestOverAllMasks(List<Integer> remaining) {
+        return IntStream.range(0, 1 << wirings.size())
+                .mapToObj(mask -> costUsing(mask, remaining))
+                .flatMapToLong(OptionalLong::stream)
+                .min();
     }
 
-    private List<Integer> freeVariables(int n, int rank, int[] pivotColumnOfRow) {
-        boolean[] isBasic = new boolean[n];
-        for (int r = 0; r < rank; r++) {
-            if (pivotColumnOfRow[r] >= 0) isBasic[pivotColumnOfRow[r]] = true;
-        }
-        List<Integer> free = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (!isBasic[i]) free.add(i);
-        }
-        return free;
+    private OptionalLong costUsing(int mask, List<Integer> remaining) {
+        int[] effect = effectOf(mask);
+        if (!canApply(effect, remaining)) return OptionalLong.empty();
+        return solve(reducedFrom(effect, remaining))
+                .stream().map(sub -> Integer.bitCount(mask) + 2L * sub).findFirst();
     }
 
-    private int[] freeVariableCaps(List<Integer> freeVariables) {
-        int[] caps = new int[freeVariables.size()];
-        for (int k = 0; k < freeVariables.size(); k++) {
-            int button = buttonMasks.get(freeVariables.get(k));
-            int cap = Integer.MAX_VALUE;
-            for (int counter = 0; counter < targetCounters.length; counter++) {
-                if (((button >> counter) & 1) != 0) {
-                    cap = Math.min(cap, targetCounters[counter]);
-                }
-            }
-            caps[k] = (cap == Integer.MAX_VALUE) ? 0 : cap;
+    private int[] effectOf(int mask) {
+        int[] sum = new int[joltage.size()];
+        for (int i = 0; i < wirings.size(); i++) {
+            if ((mask & (1 << i)) != 0) addWiringTo(sum, wirings.get(i));
         }
-        return caps;
+        return sum;
     }
 
-    private void enumerateFreeVariables(int index, long[] freeValues, List<Integer> freeVariables,
-                                        int[] caps, Fraction[][] aug, int rank, long[] best) {
-        if (index == freeVariables.size()) {
-            evaluateAssignment(freeValues, freeVariables, aug, rank, best);
-            return;
-        }
-        for (long value = 0; value <= caps[index]; value++) {
-            freeValues[index] = value;
-            enumerateFreeVariables(index + 1, freeValues, freeVariables,
-                    caps, aug, rank, best);
+    private void addWiringTo(int[] sum, int wiring) {
+        for (int c = 0; c < sum.length; c++) {
+            if (((wiring >> c) & 1) != 0) sum[c]++;
         }
     }
 
-    private void evaluateAssignment(long[] freeValues, List<Integer> freeVariables,
-                                    Fraction[][] aug, int rank, long[] best) {
-        long totalPresses = 0;
-        for (long value : freeValues) totalPresses += value;
-
-        for (int r = 0; r < rank; r++) {
-            Fraction basicValue = aug[r][aug[r].length - 1];
-            for (int t = 0; t < freeVariables.size(); t++) {
-                int freeColumn = freeVariables.get(t);
-                basicValue = basicValue.minus(aug[r][freeColumn].times(Fraction.of(freeValues[t])));
-            }
-            if (!basicValue.isNonNegativeInteger()) return;
-            totalPresses += basicValue.asLong();
-        }
-
-        if (totalPresses < best[0]) best[0] = totalPresses;
+    private boolean canApply(int[] effect, List<Integer> remaining) {
+        return IntStream.range(0, remaining.size())
+                .allMatch(i -> effect[i] <= remaining.get(i) && parityMatches(effect[i], remaining.get(i)));
     }
 
-    private record Fraction(long numerator, long denominator) {
+    private List<Integer> reducedFrom(int[] effect, List<Integer> remaining) {
+        return IntStream.range(0, remaining.size())
+                .map(i -> (remaining.get(i) - effect[i]) / 2)
+                .boxed().toList();
+    }
 
-        static Fraction of(long value) {
-            return new Fraction(value, 1);
-        }
+    private static boolean parityMatches(int a, int b) {
+        return (a & 1) == (b & 1);
+    }
 
-        Fraction {
-            if (denominator < 0) { numerator = -numerator; denominator = -denominator; }
-            long divisor = gcd(Math.abs(numerator), denominator);
-            if (divisor != 0) { numerator /= divisor; denominator /= divisor; }
-            else { denominator = 1; }
-        }
-
-        Fraction minus(Fraction other) {
-            return new Fraction(numerator * other.denominator - other.numerator * denominator,
-                    denominator * other.denominator);
-        }
-
-        Fraction times(Fraction other) {
-            return new Fraction(numerator * other.numerator, denominator * other.denominator);
-        }
-
-        Fraction dividedBy(Fraction other) {
-            return new Fraction(numerator * other.denominator, denominator * other.numerator);
-        }
-
-        boolean isNonZero() {
-            return numerator != 0;
-        }
-
-        boolean isNonNegativeInteger() {
-            return denominator == 1 && numerator >= 0;
-        }
-
-        long asLong() {
-            return numerator;
-        }
-
-        private static long gcd(long a, long b) {
-            while (b != 0) { long t = b; b = a % b; a = t; }
-            return a;
-        }
+    private static boolean allZero(List<Integer> values) {
+        return values.stream().allMatch(v -> v == 0);
     }
 }

@@ -1,10 +1,11 @@
 package software.aoc.challenges.day08;
-import java.util.ArrayList;
-import java.util.Collections;
+
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public final class Playground {
 
@@ -19,66 +20,60 @@ public final class Playground {
     }
 
     public Playground withNodesFrom(String input) {
-        return new Playground(
-                input.lines()
-                        .filter(line -> !line.isBlank())
-                        .map(CircuitNode::parse)
-                        .toList()
-        );
+        return new Playground(input.lines().filter(l -> !l.isBlank()).map(CircuitNode::parse).toList());
     }
 
-    public long productOfTopCircuitSizes(int connectionsToMake, int topCircuits) {
+    public long productOfTopCircuitSizes(int limit, int topCircuits) {
         if (nodes.size() < 2) return 0;
-
-        List<Connection> connections = allConnectionsSorted();
-
-        UnionFind uf = new UnionFind(nodes.size());
-        int actualConnections = Math.min(connectionsToMake, connections.size());
-        for (int i = 0; i < actualConnections; i++) {
-            Connection c = connections.get(i);
-            uf.union(c.firstIndex(), c.secondIndex());
-        }
-
-        Map<Integer, Integer> circuitSizes = new HashMap<>();
-        for (int i = 0; i < nodes.size(); i++) {
-            int root = uf.find(i);
-            circuitSizes.merge(root, 1, Integer::sum);
-        }
-
-        return circuitSizes.values().stream()
-                .sorted(Comparator.reverseOrder())
-                .limit(topCircuits)
-                .mapToLong(Integer::longValue)
-                .reduce(1L, (a, b) -> a * b);
+        UnionFind unionFind = unifyShortestConnections(limit);
+        return productOfTop(circuitSizesIn(unionFind), topCircuits);
     }
 
     public long productOfXOfFinalUnifyingConnection() {
         if (nodes.size() < 2) return 0;
-
-        List<Connection> connections = allConnectionsSorted();
-        UnionFind uf = new UnionFind(nodes.size());
-        int remainingCircuits = nodes.size();
-
-        for (Connection c : connections) {
-            if (uf.union(c.firstIndex(), c.secondIndex())) {
-                remainingCircuits--;
-                if (remainingCircuits == 1) {
-                    return nodes.get(c.firstIndex()).x() * nodes.get(c.secondIndex()).x();
-                }
-            }
+        UnionFind unionFind = new UnionFind(nodes.size());
+        int remaining = nodes.size();
+        for (Connection c : allConnectionsSorted()) {
+            if (unionFind.union(c.firstIndex(), c.secondIndex()) && --remaining == 1) return productOfXFor(c);
         }
-        throw new IllegalStateException("No se puede conseguir un único circuito conectando los pares");
+        return 0;
+    }
+
+    private UnionFind unifyShortestConnections(int limit) {
+        UnionFind unionFind = new UnionFind(nodes.size());
+        allConnectionsSorted().stream().limit(limit)
+                .forEach(c -> unionFind.union(c.firstIndex(), c.secondIndex()));
+        return unionFind;
+    }
+
+    private long productOfXFor(Connection c) {
+        return nodes.get(c.firstIndex()).x() * nodes.get(c.secondIndex()).x();
+    }
+
+    private Collection<Long> circuitSizesIn(UnionFind unionFind) {
+        return IntStream.range(0, nodes.size()).boxed()
+                .collect(Collectors.groupingBy(unionFind::find, Collectors.counting()))
+                .values();
+    }
+
+    private static long productOfTop(Collection<Long> sizes, int topCircuits) {
+        return sizes.stream()
+                .sorted(Comparator.reverseOrder())
+                .limit(topCircuits)
+                .reduce(1L, (a, b) -> a * b);
     }
 
     private List<Connection> allConnectionsSorted() {
-        List<Connection> result = new ArrayList<>();
-        for (int i = 0; i < nodes.size(); i++) {
-            for (int j = i + 1; j < nodes.size(); j++) {
-                long dist = nodes.get(i).squaredDistanceTo(nodes.get(j));
-                result.add(new Connection(dist, i, j));
-            }
-        }
-        Collections.sort(result);
-        return result;
+        return allConnections().sorted().toList();
+    }
+
+    private Stream<Connection> allConnections() {
+        return IntStream.range(0, nodes.size()).boxed()
+                .flatMap(i -> IntStream.range(i + 1, nodes.size())
+                        .mapToObj(j -> connectionBetween(i, j)));
+    }
+
+    private Connection connectionBetween(int i, int j) {
+        return new Connection(nodes.get(i).squaredDistanceTo(nodes.get(j)), i, j);
     }
 }

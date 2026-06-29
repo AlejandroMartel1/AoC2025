@@ -1,5 +1,8 @@
 package software.aoc.challenges.day09;
+
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public final class MovieTheater {
 
@@ -15,39 +18,30 @@ public final class MovieTheater {
 
     public MovieTheater withRedTilesFrom(String input) {
         return new MovieTheater(
-                input.lines()
-                        .filter(line -> !line.isBlank())
-                        .map(RedTile::parse)
-                        .toList()
+                input.lines().filter(line -> !line.isBlank()).map(RedTile::parse).toList()
         );
     }
 
     public long largestRectangleArea() {
-        long maxArea = 0L;
-        for (int i = 0; i < tiles.size(); i++) {
-            for (int j = i + 1; j < tiles.size(); j++) {
-                long area = tiles.get(i).rectangleAreaWith(tiles.get(j));
-                maxArea = Math.max(maxArea, area);
-            }
-        }
-        return maxArea;
+        return allTilePairs().mapToLong(this::areaOf).max().orElse(0L);
     }
 
     public long largestGreenRectangleArea() {
         if (tiles.size() < 2) return 0;
-
         PolygonGrid grid = new PolygonGrid(tiles);
-        long maxArea = 0L;
-        for (int i = 0; i < tiles.size(); i++) {
-            for (int j = i + 1; j < tiles.size(); j++) {
-                RedTile a = tiles.get(i);
-                RedTile b = tiles.get(j);
-                if (grid.containsRectangleBetween(a, b)) {
-                    long area = a.rectangleAreaWith(b);
-                    maxArea = Math.max(maxArea, area);
-                }
-            }
-        }
-        return maxArea;
+        return allTilePairs()
+                .filter(pair -> grid.containsRectangleBetween(pair[0], pair[1]))
+                .mapToLong(this::areaOf)
+                .max().orElse(0L);
+    }
+
+    private long areaOf(RedTile[] pair) {
+        return pair[0].rectangleAreaWith(pair[1]);
+    }
+
+    private Stream<RedTile[]> allTilePairs() {
+        return IntStream.range(0, tiles.size()).boxed()
+                .flatMap(i -> IntStream.range(i + 1, tiles.size())
+                        .mapToObj(j -> new RedTile[] { tiles.get(i), tiles.get(j) }));
     }
 }

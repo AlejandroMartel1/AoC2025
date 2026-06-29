@@ -1,103 +1,44 @@
 package software.aoc.challenges.day04;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public final class PaperGrid {
 
-    private static final char roll = '@';
-    private static final char empty = '.';
-    private static final int threshold = 4;
     private final List<String> rows;
 
-    private PaperGrid(List<String> rows) {
+    public PaperGrid(List<String> rows) {
         this.rows = rows;
     }
 
-    public static PaperGrid empty() {
-        return new PaperGrid(List.of());
+    public boolean isInside(Position p) {
+        return p.row() >= 0 && p.row() < rows.size()
+                && p.col() >= 0 && p.col() < rows.get(p.row()).length();
     }
 
-    public PaperGrid withLayoutFrom(String input) {
-        return new PaperGrid(
-                input.lines()
-                        .filter(line -> !line.isBlank())
-                        .toList()
-        );
+    public char at(Position p) {
+        return rows.get(p.row()).charAt(p.col());
     }
 
-    public long countAccessibleRolls() {
-        return accessiblePositions().size();
+    public Stream<Position> allPositions() {
+        return IntStream.range(0, rows.size()).boxed()
+                .flatMap(r -> IntStream.range(0, rows.get(r).length())
+                        .mapToObj(c -> new Position(r, c)));
     }
 
-    public long countTotalRemovableRolls() {
-        PaperGrid current = this;
-        long totalRemoved = 0;
-        while (true) {
-            long accessibleNow = current.countAccessibleRolls();
-            if (accessibleNow == 0) break;
-            totalRemoved += accessibleNow;
-            current = current.withoutAccessibleRolls();
-        }
-        return totalRemoved;
+    public PaperGrid withAllAt(Collection<Position> positions, char value) {
+        char[][] matrix = toMatrix();
+        positions.forEach(p -> matrix[p.row()][p.col()] = value);
+        return new PaperGrid(matrixAsRows(matrix));
     }
 
-    private PaperGrid withoutAccessibleRolls() {
-        List<int[]> toRemove = accessiblePositions();
-        char[][] newRows = toCharMatrix();
-        for (int[] position : toRemove) {
-            newRows[position[0]][position[1]] = empty;
-        }
-        return new PaperGrid(matrixToRowList(newRows));
+    private char[][] toMatrix() {
+        return rows.stream().map(String::toCharArray).toArray(char[][]::new);
     }
 
-    private List<int[]> accessiblePositions() {
-        List<int[]> positions = new ArrayList<>();
-        for (int row = 0; row < rows.size(); row++) {
-            String currentRow = rows.get(row);
-            for (int col = 0; col < currentRow.length(); col++) {
-                if (currentRow.charAt(col) == roll && isAccessible(row, col)) {
-                    positions.add(new int[] {row, col});
-                }
-            }
-        }
-        return positions;
-    }
-
-    private boolean isAccessible(int row, int col) {
-        return countRollNeighbors(row, col) < threshold;
-    }
-
-    private int countRollNeighbors(int row, int col) {
-        int count = 0;
-        for (int dr = -1; dr <= 1; dr++) {
-            for (int dc = -1; dc <= 1; dc++) {
-                if (dr == 0 && dc == 0) continue;
-                if (hasRollAt(row + dr, col + dc)) count++;
-            }
-        }
-        return count;
-    }
-
-    private boolean hasRollAt(int row, int col) {
-        if (row < 0 || row >= rows.size()) return false;
-        String line = rows.get(row);
-        if (col < 0 || col >= line.length()) return false;
-        return line.charAt(col) == roll;
-    }
-
-    private char[][] toCharMatrix() {
-        char[][] matrix = new char[rows.size()][];
-        for (int i = 0; i < rows.size(); i++) {
-            matrix[i] = rows.get(i).toCharArray();
-        }
-        return matrix;
-    }
-
-    private List<String> matrixToRowList(char[][] matrix) {
-        List<String> result = new ArrayList<>(matrix.length);
-        for (char[] row : matrix) {
-            result.add(new String(row));
-        }
-        return result;
+    private static List<String> matrixAsRows(char[][] matrix) {
+        return Arrays.stream(matrix).map(String::new).toList();
     }
 }

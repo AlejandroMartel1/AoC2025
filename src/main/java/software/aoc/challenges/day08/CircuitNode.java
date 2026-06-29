@@ -1,20 +1,23 @@
 package software.aoc.challenges.day08;
 
+import java.util.Arrays;
+
 public record CircuitNode(long x, long y, long z) {
 
     public static CircuitNode parse(String text) {
-        String[] parts = text.split(",");
-        return new CircuitNode(
-                Long.parseLong(parts[0]),
-                Long.parseLong(parts[1]),
-                Long.parseLong(parts[2])
-        );
+        long[] coords = coordsIn(text);
+        return new CircuitNode(coords[0], coords[1], coords[2]);
     }
 
     public long squaredDistanceTo(CircuitNode other) {
-        long dx = x - other.x;
-        long dy = y - other.y;
-        long dz = z - other.z;
-        return dx * dx + dy * dy + dz * dz;
+        return square(x - other.x) + square(y - other.y) + square(z - other.z);
+    }
+
+    private static long[] coordsIn(String text) {
+        return Arrays.stream(text.split(",")).mapToLong(Long::parseLong).toArray();
+    }
+
+    private static long square(long n) {
+        return n * n;
     }
 }

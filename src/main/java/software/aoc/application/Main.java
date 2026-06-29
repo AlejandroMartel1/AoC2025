@@ -1,5 +1,4 @@
 package software.aoc.application;
-
 public final class Main {
 
     private static final int Day = 10;

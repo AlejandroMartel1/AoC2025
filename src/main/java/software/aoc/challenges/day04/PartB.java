@@ -4,7 +4,7 @@ import software.aoc.challenges.Solver;
 public class PartB implements Solver {
     @Override
     public long solve(String input) {
-        return PaperGrid.empty()
+        return TrashCompactor.empty()
                 .withLayoutFrom(input)
                 .countTotalRemovableRolls();
     }

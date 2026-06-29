@@ -1,79 +1,71 @@
 package software.aoc.challenges.day10;
-
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
-public record Machine(int targetMask, int[] targetCounters, List<Integer> buttonMasks) {
+public record Machine(IndicatorLight light, List<Button> buttons, List<Integer> joltage) {
 
-    private static final Pattern BUTTON_PATTERN = Pattern.compile("\\(([0-9,]+)\\)");
+    private static final Pattern BUTTON_PATTERN = Pattern.compile("\\([0-9,]+\\)");
     private static final Pattern JOLTAGE_PATTERN = Pattern.compile("\\{([0-9,]+)}");
 
     public static Machine parse(String line) {
-        int lightsStart = line.indexOf('[') + 1;
-        int lightsEnd = line.indexOf(']');
-        int target = bitmaskFromLights(line.substring(lightsStart, lightsEnd));
-
-        List<Integer> buttons = new ArrayList<>();
-        Matcher buttonMatcher = BUTTON_PATTERN.matcher(line);
-        while (buttonMatcher.find()) {
-            buttons.add(bitmaskFromIndices(buttonMatcher.group(1)));
-        }
-
-        int[] joltages = new int[0];
-        Matcher joltageMatcher = JOLTAGE_PATTERN.matcher(line);
-        if (joltageMatcher.find()) {
-            joltages = parseCounters(joltageMatcher.group(1));
-        }
-
-        return new Machine(target, joltages, buttons);
+        return new Machine(lightIn(line), buttonsIn(line), joltageIn(line));
     }
 
     public int fewestButtonPresses() {
-        int n = buttonMasks.size();
-        int bestPresses = Integer.MAX_VALUE;
-        for (int subset = 0; subset < (1 << n); subset++) {
-            int xor = 0;
-            for (int i = 0; i < n; i++) {
-                if ((subset & (1 << i)) != 0) {
-                    xor ^= buttonMasks.get(i);
-                }
-            }
-            if (xor == targetMask) {
-                int presses = Integer.bitCount(subset);
-                if (presses < bestPresses) bestPresses = presses;
-            }
-        }
-        return bestPresses;
+        return allButtonConfigurations()
+                .filter(this::matchesLightPattern)
+                .map(Integer::bitCount)
+                .min().orElseThrow();
     }
 
     public long fewestPressesForJoltage() {
-        return new JoltageSystem(buttonMasks, targetCounters).minimumPresses();
+        return new JoltageSystem(wirings(), joltage).minimumPresses();
     }
 
-    private static int bitmaskFromLights(String diagram) {
-        int mask = 0;
-        for (int i = 0; i < diagram.length(); i++) {
-            if (diagram.charAt(i) == '#') mask |= (1 << i);
-        }
-        return mask;
+    private IntStream allButtonConfigurations() {
+        return IntStream.range(0, 1 << buttons.size());
     }
 
-    private static int bitmaskFromIndices(String csv) {
-        int mask = 0;
-        for (String token : csv.split(",")) {
-            mask |= (1 << Integer.parseInt(token.trim()));
-        }
-        return mask;
+    private boolean matchesLightPattern(int pressedMask) {
+        return xorOfPressedIn(pressedMask) == light.value();
     }
 
-    private static int[] parseCounters(String csv) {
-        String[] tokens = csv.split(",");
-        int[] result = new int[tokens.length];
-        for (int i = 0; i < tokens.length; i++) {
-            result[i] = Integer.parseInt(tokens[i].trim());
-        }
-        return result;
+    private int xorOfPressedIn(int pressedMask) {
+        return IntStream.range(0, buttons.size())
+                .filter(i -> isPressed(pressedMask, i))
+                .map(i -> buttons.get(i).wiring())
+                .reduce(0, (a, b) -> a ^ b);
+    }
+
+    private boolean isPressed(int pressedMask, int index) {
+        return (pressedMask & (1 << index)) != 0;
+    }
+
+    private List<Integer> wirings() {
+        return buttons.stream().map(Button::wiring).toList();
+    }
+
+    private static IndicatorLight lightIn(String line) {
+        return IndicatorLight.parse(line.substring(line.indexOf('['), line.indexOf(']') + 1));
+    }
+
+    private static List<Button> buttonsIn(String line) {
+        return BUTTON_PATTERN.matcher(line).results()
+                .map(MatchResult::group)
+                .map(Button::parse)
+                .toList();
+    }
+
+    private static List<Integer> joltageIn(String line) {
+        Matcher matcher = JOLTAGE_PATTERN.matcher(line);
+        if (!matcher.find()) return List.of();
+        return Arrays.stream(matcher.group(1).split(","))
+                .map(String::trim)
+                .map(Integer::parseInt)
+                .toList();
     }
 }
