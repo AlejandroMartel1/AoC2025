@@ -69,8 +69,7 @@ class ChristmasTreeFarmTest {
     void realPuzzleInputProducesExpectedAnswer() throws IOException {
         String input = Files.readString(Path.of("src/main/resources/inputs/day12.txt"));
         long count = ChristmasTreeFarm.empty().loadedFrom(input).countRegionsThatFit();
-        // Sustituye XXX por la respuesta correcta de AoC cuando la tengas
-        // assertEquals(XXX, count);
+        assertEquals(454, count);
         System.out.println("Día 12 PartA: " + count);
     }
 }

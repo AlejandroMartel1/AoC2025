@@ -19,11 +19,8 @@ public record BeamState(Set<Integer> beams, long splits) {
     }
 
     private static Stream<Integer> nextBeamsFrom(int col, DiagramRow row) {
-        if (row.isSplitterAt(col)) {
-            return row.splitNeighborsOf(col).boxed();
-        }else if (row.isInside(col)){
-            return Stream.of(col);
-        }
+        if (row.isSplitterAt(col)) return row.splitNeighborsOf(col).boxed();
+        if (row.isInside(col)) return Stream.of(col);
         return Stream.empty();
     }
 }

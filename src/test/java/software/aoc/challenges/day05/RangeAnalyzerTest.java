@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.*;
 
-class IngredientDataBaseTest {
+class RangeAnalyzerTest {
 
     private static final String AdventExample = """
             3-5
@@ -23,8 +23,8 @@ class IngredientDataBaseTest {
 
     @Test
     void anEmptyDatabaseHasNoFreshIngredients() {
-        assertEquals(0, IngredientDataBase.empty().countFreshIngredients());
-        assertEquals(0, IngredientDataBase.empty().countAllFreshIds());
+        assertEquals(0, RangeAnalyzer.empty().countFreshIngredients());
+        assertEquals(0, RangeAnalyzer.empty().countAllFreshIds());
     }
 
     @Test
@@ -41,7 +41,7 @@ class IngredientDataBaseTest {
 
     @Test
     void theDatabaseDetectsFreshIdsAmongAvailable() {
-        long count = IngredientDataBase.empty()
+        long count = RangeAnalyzer.empty()
                 .loadedFrom(AdventExample)
                 .countFreshIngredients();
         assertEquals(3, count);
@@ -49,7 +49,7 @@ class IngredientDataBaseTest {
 
     @Test
     void theDatabaseCountsTotalFreshIdsAcrossDisjointRanges() {
-        long total = IngredientDataBase.empty()
+        long total = RangeAnalyzer.empty()
                 .loadedFrom("1-2\n5-7\n\n")
                 .countAllFreshIds();
         assertEquals(5, total);
@@ -57,7 +57,7 @@ class IngredientDataBaseTest {
 
     @Test
     void theDatabaseMergesAdjacentRangesAsContinuous() {
-        long total = IngredientDataBase.empty()
+        long total = RangeAnalyzer.empty()
                 .loadedFrom("1-5\n6-10\n\n")
                 .countAllFreshIds();
         assertEquals(10, total);
@@ -65,7 +65,7 @@ class IngredientDataBaseTest {
 
     @Test
     void theDatabaseMergesOverlappingRangesWithoutDoubleCounting() {
-        long total = IngredientDataBase.empty()
+        long total = RangeAnalyzer.empty()
                 .loadedFrom("1-100\n10-50\n\n")
                 .countAllFreshIds();
         assertEquals(100, total);
@@ -73,15 +73,15 @@ class IngredientDataBaseTest {
 
     @Test
     void thePuzzleExampleProducesExpectedCounts() {
-        IngredientDataBase database = IngredientDataBase.empty().loadedFrom(AdventExample);
+        RangeAnalyzer database = RangeAnalyzer.empty().loadedFrom(AdventExample);
         assertEquals(3L, database.countFreshIngredients());
         assertEquals(14L, database.countAllFreshIds());
     }
 
     @Test
     void theDatabaseIsImmutable() {
-        IngredientDataBase original = IngredientDataBase.empty();
-        IngredientDataBase loaded = original.loadedFrom(AdventExample);
+        RangeAnalyzer original = RangeAnalyzer.empty();
+        RangeAnalyzer loaded = original.loadedFrom(AdventExample);
 
         assertEquals(0, original.countFreshIngredients());
         assertEquals(3, loaded.countFreshIngredients());
@@ -90,7 +90,7 @@ class IngredientDataBaseTest {
     @Test
     void realPuzzleInputProducesExpectedAnswers() throws IOException {
         String input = Files.readString(Path.of("src/main/resources/inputs/day05.txt"));
-        IngredientDataBase database = IngredientDataBase.empty().loadedFrom(input);
+        RangeAnalyzer database = RangeAnalyzer.empty().loadedFrom(input);
 
         assertEquals(643L, database.countFreshIngredients());
         assertEquals(342018167474526L, database.countAllFreshIds());

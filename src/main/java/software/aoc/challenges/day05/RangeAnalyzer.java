@@ -2,23 +2,23 @@ package software.aoc.challenges.day05;
 import java.util.Arrays;
 import java.util.List;
 
-public final class IngredientDataBase {
+public final class RangeAnalyzer {
 
     private final List<FreshRange> freshRanges;
     private final long[] availableIds;
 
-    private IngredientDataBase(List<FreshRange> freshRanges, long[] availableIds) {
+    private RangeAnalyzer(List<FreshRange> freshRanges, long[] availableIds) {
         this.freshRanges = freshRanges;
         this.availableIds = availableIds;
     }
 
-    public static IngredientDataBase empty() {
-        return new IngredientDataBase(List.of(), new long[0]);
+    public static RangeAnalyzer empty() {
+        return new RangeAnalyzer(List.of(), new long[0]);
     }
 
-    public IngredientDataBase loadedFrom(String input) {
+    public RangeAnalyzer loadedFrom(String input) {
         String[] sections = input.trim().split("\\R\\R");
-        return new IngredientDataBase(parseRanges(sections[0]), parseIds(idsSectionIn(sections)));
+        return new RangeAnalyzer(parseRanges(sections[0]), parseIds(idsSectionIn(sections)));
     }
 
     public long countFreshIngredients() {

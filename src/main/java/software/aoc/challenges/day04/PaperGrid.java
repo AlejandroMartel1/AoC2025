@@ -1,16 +1,15 @@
 package software.aoc.challenges.day04;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public final class PaperGrid {
+public record PaperGrid(List<String> rows) {
 
-    private final List<String> rows;
-
-    public PaperGrid(List<String> rows) {
-        this.rows = rows;
+    public PaperGrid {
+        rows = List.copyOf(rows);
     }
 
     public boolean isInside(Position p) {
@@ -29,16 +28,12 @@ public final class PaperGrid {
     }
 
     public PaperGrid withAllAt(Collection<Position> positions, char value) {
-        char[][] matrix = toMatrix();
-        positions.forEach(p -> matrix[p.row()][p.col()] = value);
-        return new PaperGrid(matrixAsRows(matrix));
-    }
+        char[][] tempMatrix = rows.stream().map(String::toCharArray).toArray(char[][]::new);
 
-    private char[][] toMatrix() {
-        return rows.stream().map(String::toCharArray).toArray(char[][]::new);
-    }
+        positions.forEach(p -> tempMatrix[p.row()][p.col()] = value);
 
-    private static List<String> matrixAsRows(char[][] matrix) {
-        return Arrays.stream(matrix).map(String::new).toList();
+        return new PaperGrid(
+                Arrays.stream(tempMatrix).map(String::new).toList()
+        );
     }
 }

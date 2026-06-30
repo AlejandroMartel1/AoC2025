@@ -4,55 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 11 Challenge and Tests implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/Selection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/TrashCompactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/MergedRanges.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/ProblemSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/BeamState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/DiagramRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/Timelines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/VerticalSegment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/IndicatorLight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/Device.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/PartB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day11/Reactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/ChristmasTreeFarm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Packer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/PartA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Region.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day11/ReactorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day12/ChristmasTreeFarmTest.java" afterDir="false" />
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Day 11, 12 Challenge, Tests implemented and modified some days implementation">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day01.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day02.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day03.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day04.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day05.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day07.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day09.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day10.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day11.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/ChallengeOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day02/IdRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day02/IdRange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/BatteryBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/BatteryBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PowerSupply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day03/PowerSupply.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PaperGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day04/PartB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/FreshRange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathWorksheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day06/MathWorksheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/IngredientDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/RangeAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day05/PartB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/BeamState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/BeamState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/TachyonManifold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day07/TachyonManifold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/CircuitNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/CircuitNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Playground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/Playground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day08/UnionFind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/MovieTheater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/MovieTheater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PolygonGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day09/PolygonGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/JoltageSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day10/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day04/PaperGridTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day10/FactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Packer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/challenges/day12/Packer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/IngredientDataBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/challenges/day05/RangeAnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,11 +100,14 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aleja\Desktop\AoC\Código\AdventOfCode\src\main\resources\inputs" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleja\Desktop\AoC\Código\AdventOfCode" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="software.aoc.challenges.day09" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FactoryTest.inspectMachineDimensions">
+  <component name="RunManager">
     <configuration name="FactoryTest.inspectMachineDimensions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AdventOfCode" />
       <extension name="coverage">
@@ -233,6 +211,11 @@
       <workItem from="1782229481148" duration="1517000" />
       <workItem from="1782250577765" duration="1615000" />
       <workItem from="1782290944632" duration="1925000" />
+      <workItem from="1782767256605" duration="2885000" />
+      <workItem from="1782770164363" duration="13000" />
+      <workItem from="1782820654186" duration="1620000" />
+      <workItem from="1782830356500" duration="8000" />
+      <workItem from="1782831837478" duration="20317000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -362,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781692920381</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Day 11, 12 Challenge, Tests implemented and modified some days implementation">
+      <option name="closed" value="true" />
+      <created>1782767300366</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782767300366</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,6 +396,7 @@
     <MESSAGE value="Day 9 Challenge and Tests implemented" />
     <MESSAGE value="Day 10 Challenge and Tests implemented" />
     <MESSAGE value="Day 11 Challenge and Tests implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 11 Challenge and Tests implemented" />
+    <MESSAGE value="Day 11, 12 Challenge, Tests implemented and modified some days implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 11, 12 Challenge, Tests implemented and modified some days implementation" />
   </component>
 </project>

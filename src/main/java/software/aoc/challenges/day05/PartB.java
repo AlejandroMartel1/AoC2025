@@ -4,7 +4,7 @@ import software.aoc.challenges.Solver;
 public class PartB implements Solver {
     @Override
     public long solve(String input) {
-        return IngredientDataBase.empty()
+        return RangeAnalyzer.empty()
                 .loadedFrom(input)
                 .countAllFreshIds();
     }

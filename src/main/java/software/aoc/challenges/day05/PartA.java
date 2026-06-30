@@ -5,7 +5,7 @@ public final class PartA implements Solver {
 
     @Override
     public long solve(String input) {
-        return IngredientDataBase.empty()
+        return RangeAnalyzer.empty()
                 .loadedFrom(input)
                 .countFreshIngredients();
     }

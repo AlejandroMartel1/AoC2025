@@ -74,8 +74,7 @@ public final class Packer {
                 .anyMatch(anchor -> tryPlaceAt(orientation, anchor, pieces, index, grid));
     }
 
-    private boolean tryPlaceAt(Shape orientation, Position anchor,
-                               List<Shape> pieces, int index, Grid grid) {
+    private boolean tryPlaceAt(Shape orientation, Position anchor, List<Shape> pieces, int index, Grid grid) {
         if (!grid.canPlace(orientation, anchor.row(), anchor.col())) return false;
         grid.place(orientation, anchor.row(), anchor.col());
         if (tryPlace(pieces, index + 1, grid)) return true;

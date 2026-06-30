@@ -46,6 +46,5 @@ public final class TachyonManifold {
         return rows.stream()
                 .flatMapToInt(row -> row.sourceColumn().stream())
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("Fuente 'S' no encontrada en el manifold"));
-    }
+                .orElseThrow();}
 }
