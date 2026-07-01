@@ -23,7 +23,6 @@ un nuevo `PaperGrid`. El original sigue intacto.
 | `TrashCompactor` | Orquestador con la lógica de accesibilidad y la simulación de eliminación por capas |
 | `PartA`, `PartB` | Entry points con fluent API |
 
-**3 clases de dominio + 2 entry points**.
 
 ## Patrones de diseño aplicados
 

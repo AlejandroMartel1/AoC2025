@@ -24,7 +24,6 @@ En el noveno día se tiene un conjunto de baldosas rojas (`RedTile`) con coorden
 | `MovieTheater` | Orquestador: colección de baldosas, cálculos de rectángulo máximo |
 | `PartA`, `PartB` | Entry points con fluent API |
 
-**4 clases de dominio + 2 entry points**.
 
 ## Patrones de diseño aplicados
 

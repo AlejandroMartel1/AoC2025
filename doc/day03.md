@@ -24,7 +24,6 @@ El tercer día nos presenta bancos de baterías, representando cada banco una se
 | `PowerSupply` | Orquestador con la lista de bancos. Suma las joltages máximas. |
 | `PartA`, `PartB` | Entry points con fluent API. |
 
-**3 clases de dominio + 2 entry points**.
 
 ## Patrones de diseño aplicados
 

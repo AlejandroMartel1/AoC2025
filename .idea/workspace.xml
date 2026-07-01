@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Readme implemented and good naming modified">
+    <list default="true" id="97be8e51-5385-468f-95a4-250dd4c0ac1d" name="Changes" comment="Readme modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/day02.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/day02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/day03.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/day03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/day04.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/day04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/day09.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/day09.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +211,7 @@
       <workItem from="1782820654186" duration="1620000" />
       <workItem from="1782830356500" duration="8000" />
       <workItem from="1782831837478" duration="21496000" />
+      <workItem from="1782888770069" duration="3336000" />
     </task>
     <task id="LOCAL-00001" summary="Application, IO, Input-resources and Day1 challenge implemented">
       <option name="closed" value="true" />
@@ -352,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782856484861</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Readme modified">
+      <option name="closed" value="true" />
+      <created>1782889073752</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1782889073752</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +410,7 @@
     <MESSAGE value="Day 11 Challenge and Tests implemented" />
     <MESSAGE value="Day 11, 12 Challenge, Tests implemented and modified some days implementation" />
     <MESSAGE value="Readme implemented and good naming modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme implemented and good naming modified" />
+    <MESSAGE value="Readme modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme modified" />
   </component>
 </project>

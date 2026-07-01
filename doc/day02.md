@@ -24,7 +24,6 @@ La parte A es un caso particular de la parte B, donde el patrón debe tener exac
 | `GiftShopCatalog` | Fachada del catálogo, con las operaciones de suma de IDs inválidos y patronados |
 | `PartA`, `PartB` | Entry points con fluent API |
 
-**2 clases de dominio + 2 entry points**.
 
 ## Patrones de diseño aplicados
 
