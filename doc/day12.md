@@ -8,7 +8,7 @@ En el dudodécimo día tenemos un catálogo de formas de regalos (cada una descr
 
 ## Algoritmos y técnicas
 
-- **Algoritmo principal**: **backtracking con tres podas independientes que reducen  el árbol de búsqueda.
+- **Algoritmo principal**: **branch and bound** con memoización de estados fallidos. Tres cotas independientes reducen el árbol de búsqueda antes de recurrir al backtracking.
 - **Cota inferior por celdas reales**: si la suma de celdas requeridas excede la capacidad, imposible.
 - **Cota superior por bounding rectangle**: si los rectángulos envolventes caben sin solaparse, la solución existe trivialmente.
 - **Memoización de estados fallidos**: registrar estados del grid demostrados inviables.

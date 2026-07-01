@@ -8,7 +8,7 @@ Cada enlace lleva a una explicación detallada del problema, los algoritmos y t�
 
 | Día | Problema | Algoritmo principal                             |
 |---|---|-------------------------------------------------|
-| [1](doc/day01.md) | Dial circular con rotaciones | Aritmética modular                    |
+| [1](doc/day01.md) | Dial circular con rotaciones | Aritmética modular                              |
 | [2](doc/day02.md) | Catálogo de IDs con detección de patrones | Búsqueda de patrones repetidos                  |
 | [3](doc/day03.md) | Selección de dígitos para máxima joltage | Stack monótono decreciente + greedy             |
 | [4](doc/day04.md) | Compactador de basura por capas | Poda iterativa                                  |
@@ -19,7 +19,7 @@ Cada enlace lleva a una explicación detallada del problema, los algoritmos y t�
 | [9](doc/day09.md) | Geometría con ray casting | Regla par-impar + compresión                    |
 | [10](doc/day10.md) | Configuración de máquinas | Fuerza bruta + divide y vencerás                |
 | [11](doc/day11.md) | Conteo de caminos en un DAG | DFS memoizado + factorización por permutaciones |
-| [12](doc/day12.md) | Empaquetado 2D de regalos | Branch and bound + transformaciones isométricas |
+| [12](doc/day12.md) | Empaquetado 2D de regalos | Branch and bound +  memoización                 |
 
 
 
